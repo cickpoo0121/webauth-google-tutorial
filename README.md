@@ -8,3 +8,8 @@
 
 ### branch lesson01
 * create authen route
+
+### branch lesson01
+* create passport setup
+* modify /auth/google
+* move Google secret key to another folder

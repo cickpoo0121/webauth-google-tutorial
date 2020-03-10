@@ -1,5 +1,6 @@
 const express = require("express");
-const authRoutes = require("./routes/auth-routes")
+const authRoutes = require("./routes/auth-routes");
+const passportSetup = require("./config/passport-setup");
 // const path = require("path");
 
 const app = express();
@@ -8,7 +9,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 //========== Middlewar ===========
-app.use("/auth",authRoutes);
+app.use("/auth", authRoutes);
 
 //========== Services ============
 //--- Root ---
