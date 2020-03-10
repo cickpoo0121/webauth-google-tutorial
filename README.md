@@ -13,3 +13,6 @@
 * create passport setup
 * modify /auth/google
 * move Google secret key to another folder
+
+## branch lesson03
+* get user pfofile and email from google
