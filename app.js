@@ -1,7 +1,10 @@
 const express = require("express");
+const path = require("path");
 const authRoutes = require("./routes/auth-routes");
 const passportSetup = require("./config/passport-setup");
-// const path = require("path");
+const passport = require("passport");
+const cookieSession= require("cookie-session");
+const key = require("./config/key")
 
 const app = express();
 
@@ -9,6 +12,19 @@ const app = express();
 app.set("view engine", "ejs");
 
 //========== Middlewar ===========
+//cookie
+app.use(cookieSession({
+    maxAge: 60*60*1000,
+    keys: [key.cookie.cookiekey]
+}))
+
+//initialize passportt for se/deserialization
+app.use(passport.initialize());
+
+//session
+app.use(passport.session());
+
+//auth
 app.use("/auth", authRoutes);
 
 //========== Services ============
