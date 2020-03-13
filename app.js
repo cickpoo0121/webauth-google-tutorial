@@ -5,6 +5,7 @@ const passportSetup = require("./config/passport-setup");
 const passport = require("passport");
 const cookieSession= require("cookie-session");
 const key = require("./config/key")
+const profile= require("./routes/profile-routes")
 
 const app = express();
 
@@ -26,6 +27,9 @@ app.use(passport.session());
 
 //auth
 app.use("/auth", authRoutes);
+
+//pfofile page
+app.use("/profile", profile);
 
 //========== Services ============
 //--- Root ---
